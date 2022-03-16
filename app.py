@@ -58,7 +58,7 @@ def Album():
 
 
 
-@app.route("/register", methods=['POST'])
+@app.route("/register", methods=['GET','POST'])
 def register():
     if(request.method=='POST'):
         name = request.form.get('name')
