@@ -83,8 +83,8 @@ def register():
             return redirect(url_for('register'))
         else:
              flash('You have registtered succesfully','success')
-        entry = Register(name=name,uname=uname,email=email,password=password,cpassword=cpassword)
-        db.session.add(register)
+        entry = register(name=name,uname=uname,email=email,password=password,cpassword=cpassword)
+        db.session.add(entry)
         db.session.commit()
     return render_template('register.html')
 
