@@ -61,12 +61,12 @@ def Album():
 @app.route("/register", methods=['POST'])
 def register():
     if(request.method=='POST'):
-        name = request.form.['name']
-        uname = request.form.['uname']
-        mobile = request.form.['mobile']
-        email= request.form.['email']
-        password= request.form.['password']
-        cpassword= request.form.['cpassword']
+        name = request.form['name']
+        uname = request.form['uname']
+        mobile = request.form['mobile']
+        email= request.form['email']
+        password= request.form['password']
+        cpassword= request.form['cpassword']
 
         user=register.query.filter_by(email=email).first()
         if user:
