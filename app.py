@@ -20,7 +20,7 @@ if ENV == 'dev':
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:12345678@localhost/e-learning'
 else:
     app.debug = False
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://epaobtgkrtmyno:fe73175a2ef9da7463b3c0c50c4cd33e40903d7154e36b72b5c06badf64c2fa8@ec2-3-222-204-187.compute-1.amazonaws.com:5432/d92k63lqta8odt'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://cxrthnnzpdurpo:6b4dd798078a00d1dcbd785bf73ba7c83673bb49f57c2935e2facf318d547bd3@ec2-18-210-191-5.compute-1.amazonaws.com:5432/df06lhn4p4l26b'
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
@@ -58,15 +58,15 @@ def Album():
 
 
 
-@app.route("/register", methods=['GET','POST'])
+@app.route("/register", methods=['POST'])
 def register():
     if(request.method=='POST'):
-        name = request.form.get('name')
-        uname = request.form.get('uname')
-        mobile = request.form.get('mobile')
-        email= request.form.get('email')
-        password= request.form.get('password')
-        cpassword= request.form.get('cpassword')
+        name = request.form.['name']
+        uname = request.form.['uname']
+        mobile = request.form.['mobile']
+        email= request.form.['email']
+        password= request.form.['password']
+        cpassword= request.form.['cpassword']
 
         user=register.query.filter_by(email=email).first()
         if user:
