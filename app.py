@@ -17,7 +17,7 @@ ENV = 'prod'
 
 if ENV == 'dev':
     app.debug = True
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:12345678@localhost/e-learning'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:123456@localhost/e-learningwebapp'
 else:
     app.debug = False
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://cxrthnnzpdurpo:6b4dd798078a00d1dcbd785bf73ba7c83673bb49f57c2935e2facf318d547bd3@ec2-18-210-191-5.compute-1.amazonaws.com:5432/df06lhn4p4l26b'
@@ -83,7 +83,7 @@ def register():
             return redirect(url_for('register'))
         else:
              flash('You have registtered succesfully','success')
-        entry = register(name=name,uname=uname,email=email,password=password,cpassword=cpassword)
+        entry = Register(name=name,uname=uname,email=email,password=password,cpassword=cpassword)
         db.session.add(register)
         db.session.commit()
     return render_template('register.html')
